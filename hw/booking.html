@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking</title>
+    <link rel="stylesheet" href="booking.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="booking-form">
+        <h2>Booking Form</h2>
+        <form onsubmit="return showSuccessMessage(event)">
+            <label for="room-type">Room Type:</label>
+            <select id="room-type" name="room-type" onchange="calculateTotalPrice()">
+                <option value="deluxe">Deluxe</option>
+                <option value="extra-deluxe">Extra Deluxe</option>
+                <option value="superior">Superior</option>
+            </select>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="check-in">Check-in Date:</label>
+            <input type="date" id="check-in" name="check-in" onchange="calculateTotalPrice()" required>
+            <label for="check-out">Check-out Date:</label>
+            <input type="date" id="check-out" name="check-out" onchange="calculateTotalPrice()" required>
+            <label for="total-price">Total Price:</label>
+            <input type="text" id="total-price" name="total-price" readonly>
+            <button type="submit">Submit</button>
+        </form>
+        <button onclick="goToHomePage()">Go to Home Page</button>
+    </div>
+</body>
+</html>
